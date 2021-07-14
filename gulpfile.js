@@ -21,7 +21,7 @@ const path = {
     src: {
         html: source_folder + '/{,eu/}*.html',
         pug: source_folder + '/*.pug',
-        css: source_folder + '/css/style.css',
+        css: source_folder + '/css/*.css',
         scss: source_folder + '/scss/*.scss',
         js: source_folder + '/js/*.js',
         img: source_folder + '/img/*.{jpg,jpeg,png,svg,gif,ico,webp}',
@@ -85,7 +85,7 @@ function html_watch() {
     gulp.watch(path.src.js, js);
 }
 
-let build = gulp.series(clean,html,style_scss,font,image,image_icon,js);
+let build = gulp.series(clean,html,style,style_scss,font,image,image_icon,js);
 
 exports.build = build;
 exports.html = html;

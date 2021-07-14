@@ -7,7 +7,6 @@ btnMenu.addEventListener('click', function () {
 });
 
 const links = document.getElementsByClassName('links')[0].getElementsByTagName('a');
-console.log(typeof links)
 Object.values(links).forEach( function (el) {
   el.addEventListener('click', event => {
     event.preventDefault();
@@ -20,6 +19,30 @@ Object.values(links).forEach( function (el) {
     
   })
 });
-document.addEventListener('scroll', e => {
-  console.log(window.scrollY);
-})
+
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    loop:true,
+    margin:10,
+    nav: true,
+    navText: 
+    [
+      '<img src="./img/left-arrow.png" alt="">',
+      '<img src="./img/right-arrow.png" alt="">'
+    ],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsiveClass: true,
+    responsive: {
+      0:{
+        items:1,
+      },
+      600:{
+        items:2,
+      },
+      960:{
+        items:3,
+      }
+    },
+  });
+});

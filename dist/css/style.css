@@ -1,4 +1,4 @@
-#advantages .wrapper .advantages__block, #advantages .wrapper, #products .wrapper, header nav .links ul, header nav .logo, header nav {
+#advantages .wrapper, header nav .links ul, header nav .logo, header nav {
   display: flex;
   flex-direction: row;
 }
@@ -10,8 +10,13 @@ body {
 }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
+}
+
+h2 {
+  color: #00b982;
+  text-align: center;
 }
 
 .wrapper {
@@ -20,9 +25,12 @@ a {
 }
 
 header {
-  background-color: #fff;
+  background-color: #00b982;
+  color: #fff;
   position: sticky;
   top: 0px;
+  z-index: 10;
+  box-shadow: #000 0px 0px 10px 0px;
 }
 header nav {
   justify-content: space-between;
@@ -59,7 +67,7 @@ header nav .logo .menu__btn {
 }
 header nav .logo .menu__btn.active span {
   transform: rotate(90deg);
-  background-color: #fff;
+  background-color: #00b982;
 }
 header nav .logo .menu__btn.active span::before {
   top: 0px;
@@ -93,7 +101,7 @@ header nav .logo .menu__btn-block span::after {
   top: 8px;
 }
 header nav .logo span {
-  color: #10b483;
+  color: #00b982;
 }
 header nav .links {
   width: 600px;
@@ -105,7 +113,7 @@ header nav .links {
     min-width: 100%;
     width: 100%;
     max-height: 0px;
-    background-color: #10b483;
+    background-color: #00b982;
   }
 }
 @media (max-width: 991.98px) {
@@ -148,67 +156,48 @@ header nav .links ul li a {
   text-align: center;
 }
 
-#products .wrapper {
-  flex-wrap: wrap;
-}
-#products .wrapper .products__block {
-  width: calc((100% / 3) - (15px * 2));
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #eee;
-  box-sizing: border-box;
-  margin: 15px;
-}
-@media (max-width: 991.98px) {
-  #products .wrapper .products__block {
-    width: calc((100% / 2) - (15px * 2));
-  }
-}
-@media (max-width: 767.98px) {
-  #products .wrapper .products__block {
-    width: calc(100% - (15px * 2));
-  }
-}
-#products .wrapper .products__block-img {
-  height: 226px;
-  padding: 30px 0px;
-}
-#products .wrapper .products__block-title {
+.owl-nav {
   text-align: center;
-  padding-top: 20px;
-}
-#products .wrapper .products__block-info {
-  text-align: center;
-  padding: 0px 20px;
+  padding: 20px 0px;
 }
 
-#advantages h2 {
-  text-align: center;
-}
 #advantages .wrapper {
   flex-wrap: wrap;
 }
 #advantages .wrapper .advantages__block {
-  width: calc((100% / 2) - (15px * 2));
+  background-color: #00b982;
+  color: #fff;
+  width: calc((100% / 3) - (15px * 2));
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  box-sizing: border-box;
   margin: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 @media (max-width: 991.98px) {
+  #advantages .wrapper .advantages__block {
+    width: calc((100% / 2) - (15px * 2));
+  }
+}
+@media (max-width: 767.98px) {
   #advantages .wrapper .advantages__block {
     width: calc(100% - (15px * 2));
   }
 }
-#advantages .wrapper .advantages__block-count {
-  font-size: 34px;
-  color: #10b483;
-  font-weight: bold;
-  margin-right: 21px;
+#advantages .wrapper .advantages__block-img {
+  height: 115px;
+  width: 115px;
+  margin: auto;
+  padding: 30px 0px;
 }
-#advantages .wrapper .advantages__block-body .title {
-  font-size: 20px;
+#advantages .wrapper .advantages__block-title {
+  text-align: center;
+  padding-top: 20px;
 }
-#advantages .wrapper .advantages__block-body p {
-  font-size: 14px;
-  color: #777777;
+#advantages .wrapper .advantages__block-info {
+  text-align: center;
+  padding: 0px 20px;
 }
 
 #form {
@@ -218,7 +207,7 @@ header nav .links ul li a {
   text-align: center;
 }
 #form .wrapper .form__block-title {
-  color: #10b483;
+  color: #00b982;
   font-size: 35px;
   padding: 50px 0;
 }
@@ -264,7 +253,7 @@ header nav .links ul li a {
 }
 #form .wrapper .form__block form input[type=submit] {
   margin: 5px auto;
-  background-color: #10b483;
+  background-color: #00b982;
   height: auto;
   width: auto;
   text-align: center;
@@ -273,7 +262,7 @@ header nav .links ul li a {
 }
 
 #contact {
-  background-color: #10b483;
+  background-color: #00b982;
 }
 #contact .wrapper .contact__block {
   text-align: center;
