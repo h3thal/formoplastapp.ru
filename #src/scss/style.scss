@@ -1,6 +1,6 @@
 @import "./assets/_extends";
 @import "./assets/_mixin";
-$lightBlue: #00b0e6;
+$mainColor: #10b483;
 $gray: rgb(119, 119, 119);
 $black: rgba(0, 0, 0, 0.9);
 $darkBlack: rgba(0, 0, 0, 0.4);
@@ -88,7 +88,7 @@ header {
         }
       }
       span {
-        color: $lightBlue;
+        color: $mainColor;
       }
     }
     .links {
@@ -99,7 +99,7 @@ header {
         min-width: 100%;
         width: 100%;
         max-height: 0px;
-        background-color: $lightBlue;
+        background-color: $mainColor;
       }
       &.open {
         @include md {
@@ -130,7 +130,7 @@ header {
   }
 }
 #home {
-  background-image: url(http://rusexpotrade.com/upload/iblock/9f9/6t6si2pjb1pmkctjv7kpnezr3mzgy81p.png);
+  background-image: url(../img/bg.jpg);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -188,7 +188,7 @@ header {
       }
       &-count {
         font-size: 34px;
-        color: $lightBlue;
+        color: $mainColor;
         font-weight: bold;
         margin-right: 21px;
       }
@@ -210,7 +210,7 @@ header {
     .form__block {
       text-align: center;
       &-title {
-        color: $lightBlue;
+        color: $mainColor;
         font-size: 35px;
         padding: 50px 0;
       }
@@ -252,7 +252,7 @@ header {
         }
         input[type="submit"] {
           margin: 5px auto;
-          background-color: $lightBlue;
+          background-color: $mainColor;
           height: auto;
           width: auto;
           text-align: center;
@@ -264,7 +264,7 @@ header {
   }
 }
 #contact {
-  background-color: $lightBlue;
+  background-color: $mainColor;
   .wrapper {
     .contact__block {
       text-align: center;
