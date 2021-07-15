@@ -143,6 +143,52 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  .title {
+    width: 620px;
+    color: #00b982;
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 40px;
+    background-color: #ffffffa3;
+  }
+  .home__block {
+    background-color: #ffffffa3;
+    width: 800px;
+    padding: 20px;
+    color: $mainColor;
+    font-size: 25px;
+    position: relative;
+    &-title {
+      width: 350px;
+      text-align: center;
+      background-color: $mainColor;
+      color: #fff;
+      padding: 15px 0px;
+      position: absolute;
+      top: -25px;
+      left: -25px;
+    }
+    &-inner {
+      display: flex;
+      flex-direction: row;
+      .text {
+
+      }
+      a {
+        background-color: $mainColor;
+        height: 30px;
+        padding: 10px 20px;
+        position: absolute;
+        right: -25px;
+        bottom: -25px;
+      }
+    }
+  }
 }
 #about {
   text-align: center;
