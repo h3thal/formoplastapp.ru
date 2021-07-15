@@ -3,10 +3,14 @@
   flex-direction: row;
 }
 
+@font-face {
+  font-family: Verdana;
+  src: url("../fonts/Verdana.ttf");
+}
 body {
   padding: 0px;
   margin: 0px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana;
 }
 
 a {
@@ -22,6 +26,10 @@ h2 {
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 header {
@@ -135,10 +143,13 @@ header nav .links ul {
 header nav .links ul li a {
   padding: 25px 0px;
   display: flex;
+  transition: 0.5s;
+}
+header nav .links ul li a.active {
+  color: #001b13;
 }
 @media (max-width: 991.98px) {
   header nav .links ul li a {
-    color: red;
     padding: 15px 0px 15px 20px;
   }
 }
@@ -157,20 +168,25 @@ header nav .links ul li a {
   align-items: center;
 }
 #home .title {
-  width: 620px;
-  color: #00b982;
+  width: 940px;
+  color: #ffffffed;
   text-align: center;
   padding: 15px 0px;
   font-size: 40px;
-  background-color: #ffffffa3;
+  background-color: #00b982;
+  text-transform: uppercase;
+  letter-spacing: 10px;
 }
 #home .home__block {
-  background-color: #ffffffa3;
-  width: 800px;
-  padding: 20px;
-  color: #00b982;
+  background-color: #00000052;
+  width: 670px;
+  padding: 35px 20px;
+  color: #ffffffed;
   font-size: 25px;
   position: relative;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 10px;
 }
 #home .home__block-title {
   width: 350px;
@@ -185,6 +201,9 @@ header nav .links ul li a {
 #home .home__block-inner {
   display: flex;
   flex-direction: row;
+}
+#home .home__block-inner .text p {
+  margin: 0px;
 }
 #home .home__block-inner a {
   background-color: #00b982;
@@ -202,6 +221,18 @@ header nav .links ul li a {
 .owl-nav {
   text-align: center;
   padding: 20px 0px;
+}
+
+#feature img {
+  margin: auto;
+  display: block;
+}
+@media (max-width: 767.98px) {
+  #feature img {
+    width: 100%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+  }
 }
 
 #advantages .wrapper {

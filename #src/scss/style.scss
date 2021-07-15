@@ -1,13 +1,16 @@
 @import "./assets/_extends";
 @import "./assets/_mixin";
+@import "./assets/_fonts";
 $mainColor: #00b982;
+$whiteColor: #ffffffed;
 $gray: rgb(119, 119, 119);
 $black: rgba(0, 0, 0, 0.9);
 $darkBlack: rgba(0, 0, 0, 0.4);
 body {
   padding: 0px;
   margin: 0px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  // font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana;
 }
 a {
   color: #fff;
@@ -20,6 +23,9 @@ h2 {
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+}
+.bold {
+  font-weight: bold;
 }
 header {
   background-color: $mainColor;
@@ -126,8 +132,11 @@ header {
           a {
             padding: 25px 0px;
             display: flex;
+            transition: .5s;
+            &.active {
+              color: #001b13;
+            }
             @include md {
-              color:red;
               padding: 15px 0px 15px 20px;
             }
           }
@@ -149,20 +158,24 @@ header {
   justify-content: space-evenly;
   align-items: center;
   .title {
-    width: 620px;
-    color: #00b982;
+    width: 940px;
+    color: $whiteColor;
     text-align: center;
     padding: 15px 0px;
     font-size: 40px;
-    background-color: #ffffffa3;
+    background-color: $mainColor;
+    text-transform: uppercase;
+    letter-spacing: 10px;
   }
   .home__block {
-    background-color: #ffffffa3;
-    width: 800px;
-    padding: 20px;
-    color: $mainColor;
+    background-color: #00000052;
+    width: 670px;
+    padding: 35px 20px;
+    color: $whiteColor;
     font-size: 25px;
     position: relative;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
     &-title {
       width: 350px;
       text-align: center;
@@ -177,7 +190,9 @@ header {
       display: flex;
       flex-direction: row;
       .text {
-
+        p {
+          margin: 0px;
+        }
       }
       a {
         background-color: $mainColor;
@@ -198,6 +213,17 @@ header {
 .owl-nav {
   text-align: center;
   padding: 20px 0px;
+}
+#feature {
+  img {
+    margin: auto;
+    display: block;
+    @include sm {
+      width: 100%;
+      padding: 0px 10px;
+      box-sizing: border-box
+    }
+  }
 }
 #advantages {
   .wrapper {

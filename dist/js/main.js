@@ -19,7 +19,16 @@ Object.values(links).forEach( function (el) {
     
   })
 });
-
+window.addEventListener('scroll', function (e) {
+  console.log(window.scrollY);
+  Object.values(links).forEach( function (el) {
+    let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300;
+    if (window.scrollY >= y) {
+      document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
+      el.classList.add('active');
+    }
+  });
+});
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
     loop:true,
