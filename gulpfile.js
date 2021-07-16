@@ -17,6 +17,7 @@ const path = {
         img: project_folder + '/img/',
         icon: project_folder +'/img/icon/',
         fonts: project_folder + '/fonts/',
+        download: project_folder + '/download/'
     },
     src: {
         html: source_folder + '/{,eu/}*.html',
@@ -27,17 +28,20 @@ const path = {
         img: source_folder + '/img/*.{jpg,jpeg,png,svg,gif,ico,webp}',
         icon:source_folder + '/img/icon/*.svg',
         fonts: source_folder + '/fonts/*.ttf',
+        download: source_folder + '/download/*.pdf'
     },
     watch: {
         html: source_folder + '/*.html',
-        htmlEn: project_folder + '/en',
         css: source_folder + '/css/*.css',
         js: source_folder + '/js/*.js',
         img: source_folder + '/img/**/*.{jpg, png, svg, gif, ico, webp}',
     },
     clean: './' + project_folder + '/'
 }
-
+function download_file() {
+    return src(path.src.download)
+    .pipe(dest(path.build.download))
+}
 function html() {
     return src(path.src.html)
     .pipe(dest(path.build.html))
@@ -85,9 +89,10 @@ function html_watch() {
     gulp.watch(path.src.js, js);
 }
 
-let build = gulp.series(clean,html,style,style_scss,font,image,image_icon,js);
+let build = gulp.series(clean,html,style,style_scss,font,image,image_icon,js,download_file);
 
 exports.build = build;
+exports.download_file = download_file;
 exports.html = html;
 // exports.html_pug = html_pug;
 exports.font = font;

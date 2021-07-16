@@ -171,12 +171,21 @@ header {
     letter-spacing: 10px;
     line-height: 75px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    @include md {
+    @include sm {
       width: auto;
       margin: 0px 15px;
       padding: 15px 5px;
       font-size: 25px;
       letter-spacing: 0px;
+      text-transform: none;
+      line-height: normal;
+    }
+    @include md {
+      width: auto;
+      margin: 0px 15px;
+      padding: 15px 5px;
+      font-size: 25px;
+      line-height: 40px;
     }
   }
   .home__block {
@@ -228,7 +237,20 @@ header {
   }
 }
 #about {
-  text-align: center;
+  .wrapper {
+    p {
+      text-indent: 50px;
+      .list-style-circle {
+        list-style: circle;
+      }
+      .list-style-none {
+        list-style: none;
+      }
+      @include sm {
+        padding: 0px 10px;
+      }
+    }
+  }
 }
 #photo {
 }
@@ -240,10 +262,26 @@ header {
   img {
     margin: auto;
     display: block;
+    
     @include sm {
       width: 100%;
       padding: 0px 10px;
       box-sizing: border-box
+    }
+  }
+  .feature__download {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    a {
+      background-color: $mainColor;
+      margin: 20px 30px;
+      padding: 10px 30px;
+      border-radius: 4px;
+    }
+    @include xs {
+      flex-direction: column;
+      text-align: center;
     }
   }
 }
