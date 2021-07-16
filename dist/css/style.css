@@ -19,7 +19,7 @@ a {
 }
 
 h2 {
-  color: #00b0e6;
+  color: #0370ce;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ h2 {
 }
 
 header {
-  background-color: #00b0e6;
+  background-color: #0370ce;
   color: #fff;
   position: sticky;
   top: 0px;
@@ -75,7 +75,7 @@ header nav .logo .menu__btn {
 }
 header nav .logo .menu__btn.active span {
   transform: rotate(90deg);
-  background-color: #00b0e6;
+  background-color: #0370ce;
 }
 header nav .logo .menu__btn.active span::before {
   top: 0px;
@@ -109,7 +109,7 @@ header nav .logo .menu__btn-block span::after {
   top: 8px;
 }
 header nav .logo span {
-  color: #00b0e6;
+  color: #0370ce;
 }
 header nav .links {
   width: 600px;
@@ -121,7 +121,7 @@ header nav .links {
     min-width: 100%;
     width: 100%;
     max-height: 0px;
-    background-color: #00b0e6;
+    background-color: #0370ce;
   }
 }
 @media (max-width: 991.98px) {
@@ -173,9 +173,10 @@ header nav .links ul li a.active {
   text-align: center;
   padding: 15px 0px;
   font-size: 40px;
-  background-color: #00b0e6;
+  background-color: #0370ce;
   text-transform: uppercase;
   letter-spacing: 10px;
+  line-height: 75px;
 }
 @media (max-width: 991.98px) {
   #home .title {
@@ -206,7 +207,7 @@ header nav .links ul li a.active {
 }
 #home .home__block-title {
   text-align: center;
-  background-color: #00b0e6;
+  background-color: #0370ce;
   color: #fff;
   padding: 15px 20px;
   position: absolute;
@@ -226,7 +227,7 @@ header nav .links ul li a.active {
   margin: 0px;
 }
 #home .home__block-inner a {
-  background-color: #00b0e6;
+  background-color: #0370ce;
   height: 30px;
   padding: 10px 20px;
   position: absolute;
@@ -265,7 +266,7 @@ header nav .links ul li a.active {
   justify-content: center;
 }
 #advantages .wrapper .advantages__block {
-  background-color: #00b0e6;
+  background-color: #0370ce;
   color: #fff;
   width: calc((100% / 3) - (15px * 2));
   display: flex;
@@ -307,7 +308,7 @@ header nav .links ul li a.active {
   text-align: center;
 }
 #form .wrapper .form__block-title {
-  color: #00b0e6;
+  color: #0370ce;
   font-size: 35px;
   padding: 50px 0;
 }
@@ -353,7 +354,7 @@ header nav .links ul li a.active {
 }
 #form .wrapper .form__block form input[type=submit] {
   margin: 5px auto;
-  background-color: #00b0e6;
+  background-color: #0370ce;
   height: auto;
   width: auto;
   text-align: center;
@@ -362,7 +363,7 @@ header nav .links ul li a.active {
 }
 
 #contact {
-  background-color: #00b0e6;
+  background-color: #0370ce;
 }
 #contact .wrapper .contact__block {
   text-align: center;
