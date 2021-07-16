@@ -11,14 +11,27 @@ Object.values(links).forEach( function (el) {
   el.addEventListener('click', event => {
     event.preventDefault();
     let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 100;
-    window.scrollTo(
-      {
+    window.scrollTo({
         top: y,
         behavior: "smooth"
     });
     
   })
 });
+document.getElementsByClassName('form_btn')[0].addEventListener('click', e => {
+  e.preventDefault();
+  let h = form.getBoundingClientRect().height
+  let y;
+  if ( window.innerHeight > h) {
+    y = form.getBoundingClientRect().top + pageYOffset - (window.innerHeight - h)/2;
+  } else {
+    y = form.getBoundingClientRect().top + pageYOffset - 100;
+  }
+  window.scrollTo({
+      top: y,
+      behavior: 'smooth'
+    });
+})
 window.addEventListener('scroll', function (e) {
   // console.log(window.scrollY);
   Object.values(links).forEach( function (el) {
