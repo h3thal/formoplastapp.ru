@@ -20,7 +20,7 @@ Object.values(links).forEach( function (el) {
   })
 });
 window.addEventListener('scroll', function (e) {
-  console.log(window.scrollY);
+  // console.log(window.scrollY);
   Object.values(links).forEach( function (el) {
     let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300;
     if (window.scrollY >= y) {
