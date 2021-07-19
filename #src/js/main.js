@@ -10,7 +10,12 @@ const links = document.getElementsByClassName('links')[0].getElementsByTagName('
 Object.values(links).forEach( function (el) {
   el.addEventListener('click', event => {
     event.preventDefault();
-    let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 100;
+    let h = form.getBoundingClientRect().height;
+    if ( window.innerHeight > h) {
+      y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - (window.innerHeight - h)/2;
+    } else {
+      y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 100;
+    }
     window.scrollTo({
         top: y,
         behavior: "smooth"
@@ -34,11 +39,17 @@ document.getElementsByClassName('form_btn')[0].addEventListener('click', e => {
 })
 window.addEventListener('scroll', function (e) {
   // console.log(window.scrollY);
-  Object.values(links).forEach( function (el) {
+  Object.values(links).forEach( function (el, i) {
     let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300;
     if (window.scrollY >= y) {
-      document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
+      if (i > 0) {
+        document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
+      }      
       el.classList.add('active');
+    } else if (window.scrollY < document.getElementById(document.getElementsByClassName('links')[0].getElementsByTagName('a')[0].getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300) {
+      if (document.getElementsByClassName('links')[0].getElementsByTagName('a')[0].classList.contains('active')) {
+          document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
+      }
     }
   });
 });

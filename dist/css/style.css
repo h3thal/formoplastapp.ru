@@ -33,8 +33,8 @@ h2 {
 }
 
 header {
-  background-color: #00b982;
-  color: #fff;
+  background-color: #ffffffed;
+  color: #00b982;
   position: sticky;
   top: 0px;
   z-index: 10;
@@ -115,6 +115,9 @@ header nav .links {
   width: 600px;
   overflow-y: hidden;
   transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+header nav .links a {
+  color: #00b982;
 }
 @media (max-width: 991.98px) {
   header nav .links {
