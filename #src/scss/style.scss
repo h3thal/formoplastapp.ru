@@ -1,7 +1,7 @@
 @import "./assets/_extends";
 @import "./assets/_mixin";
 @import "./assets/_fonts";
-$mainColor: #00b982;
+$mainColor: #405162;
 $whiteColor: #ffffffed;
 $gray: rgb(119, 119, 119);
 $black: rgba(0, 0, 0, 0.9);
@@ -151,7 +151,8 @@ header {
   }
 }
 #home {
-  background-image: url(../img/bg.jpg);
+  // background-image: url(../img/bg.jpg);
+  background-image: url(../img/test.jpg);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
