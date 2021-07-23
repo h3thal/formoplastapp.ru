@@ -151,8 +151,7 @@ header {
   }
 }
 #home {
-  // background-image: url(../img/bg.jpg);
-  background-image: url(../img/test.jpg);
+  background-image: url(../img/bg.jpg);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -244,13 +243,15 @@ header {
 }
 #about {
   .wrapper {
-    p {
-      text-indent: 50px;
-      .list-style-circle {
-        list-style: circle;
+    .about__block {
+      margin: 10px 0px;
+      &-title {
+        color: $mainColor;
+        font-size: 26px;
+        margin-bottom: 10px;
       }
-      .list-style-none {
-        list-style: none;
+      &-subtitle {
+        font-size: 15px;
       }
       @include sm {
         padding: 0px 10px;
