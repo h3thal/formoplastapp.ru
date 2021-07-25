@@ -44,6 +44,7 @@ window.addEventListener('scroll', function (e) {
     if (window.scrollY >= y) {
       if (i > 0) {
         document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
+        console.log(i)
       }      
       el.classList.add('active');
     } else if (window.scrollY < document.getElementById(document.getElementsByClassName('links')[0].getElementsByTagName('a')[0].getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300) {

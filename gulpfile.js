@@ -20,7 +20,7 @@ const path = {
         download: project_folder + '/download/'
     },
     src: {
-        html: source_folder + '/{,eu/}*.html',
+        html: source_folder + '/{,en/}*.html',
         pug: source_folder + '/*.pug',
         css: source_folder + '/css/*.css',
         scss: source_folder + '/scss/*.scss',

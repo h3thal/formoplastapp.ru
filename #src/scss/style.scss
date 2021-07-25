@@ -6,6 +6,7 @@ $whiteColor: #ffffffed;
 $gray: rgb(119, 119, 119);
 $black: rgba(0, 0, 0, 0.9);
 $darkBlack: rgba(0, 0, 0, 0.4);
+$yellow: #c19655;
 body {
   padding: 0px;
   margin: 0px;
@@ -13,12 +14,13 @@ body {
   font-family: Verdana;
 }
 a {
-  color: #fff;
+  color: $mainColor;
   text-decoration: none;
 }
 h2 {
   color: $mainColor;
   text-align: center;
+  text-transform: uppercase;
 }
 .wrapper {
   max-width: 1200px;
@@ -65,7 +67,7 @@ header {
         &.active {
           span {
             transform: rotate(90deg);
-            background-color: $mainColor;
+            background-color:#ffffffed;
             &::before {
               top: 0px;
               transform: rotate(45deg);
@@ -139,7 +141,8 @@ header {
             display: flex;
             transition: .5s;
             &.active {
-              color: #001b13;
+              // color: #001b13;
+              color: $yellow;
             }
             @include md {
               padding: 15px 0px 15px 20px;
@@ -152,7 +155,7 @@ header {
 }
 #home {
   background-image: url(../img/bg.jpg);
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -162,6 +165,35 @@ header {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
+  .mouse_scroll {
+    background-image: url(../img/sprite.png);
+    width: 25px;
+    height: 53px;
+    background-position: 0px -52px;
+    position: absolute;
+    bottom: 50px;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: fadeInDown;
+    @include sm {
+      display: none;
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+      }
+    
+      to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
   .title {
     width: 980px;
     color: $whiteColor;
@@ -182,7 +214,6 @@ header {
       padding: 15px 5px;
       font-size: 25px;
       letter-spacing: 0px;
-      text-transform: none;
       line-height: normal;
     }
     @include md {
@@ -195,7 +226,7 @@ header {
   }
   .home__block {
     background-color: #00000052;
-    width: 670px;
+    width: 690px;
     padding: 35px 20px;
     color: $whiteColor;
     font-size: 25px;
@@ -215,8 +246,12 @@ header {
       position: absolute;
       top: -25px;
       left: -25px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
       @include sm {
         left: -10px;
+        letter-spacing: 0px;
+        text-transform: initial;
       }
     }
     &-inner {
@@ -228,12 +263,35 @@ header {
         }
       }
       a {
-        background-color: $mainColor;
+        // background-color: #c09755;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        overflow: hidden;
+        color: $whiteColor;
+        background: $mainColor;
         height: 30px;
         padding: 10px 20px;
         position: absolute;
         right: -25px;
         bottom: -25px;
+        border-radius: 5px;
+        span {
+          position: relative;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0px;
+          height: 100%;
+          background: $yellow;
+          width: 120%;
+          left: -10%;
+          transform: skew(30deg);
+          transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+        }
+        &:hover::before {
+          transform: translate3d(100%,0,0);
+        }
         @include sm {
           right: -10px;
         }
@@ -244,17 +302,26 @@ header {
 #about {
   .wrapper {
     .about__block {
-      margin: 10px 0px;
+      margin: 25px 0px;
       &-title {
-        color: $mainColor;
+        color: $whiteColor;
+        background-color: $mainColor;
         font-size: 26px;
         margin-bottom: 10px;
+        text-align: center;
+        padding: 20px 0px;
+        @include sm {
+          font-size: 20px;
+        }
       }
       &-subtitle {
         font-size: 15px;
+        @include sm {
+          text-align: center;
+        }
       }
       @include sm {
-        padding: 0px 10px;
+        padding: 0px 15px;
       }
     }
   }
@@ -282,6 +349,7 @@ header {
     justify-content: center;
     a {
       background-color: $mainColor;
+      color: #fff;
       margin: 20px 30px;
       padding: 10px 30px;
       border-radius: 4px;
@@ -397,6 +465,9 @@ header {
       color: #fff;
       text-transform: uppercase;
       padding: 100px 20px;
+      a {
+        color: $whiteColor;
+      }
       &-title {
         font-size: 35px;
       }

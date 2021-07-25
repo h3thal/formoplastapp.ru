@@ -18,13 +18,14 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #405162;
   text-decoration: none;
 }
 
 h2 {
   color: #405162;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .wrapper {
@@ -79,7 +80,7 @@ header nav .logo .menu__btn {
 }
 header nav .logo .menu__btn.active span {
   transform: rotate(90deg);
-  background-color: #405162;
+  background-color: #ffffffed;
 }
 header nav .logo .menu__btn.active span::before {
   top: 0px;
@@ -153,7 +154,7 @@ header nav .links ul li a {
   transition: 0.5s;
 }
 header nav .links ul li a.active {
-  color: #001b13;
+  color: #c19655;
 }
 @media (max-width: 991.98px) {
   header nav .links ul li a {
@@ -163,7 +164,7 @@ header nav .links ul li a.active {
 
 #home {
   background-image: url(../img/bg.jpg);
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -173,6 +174,48 @@ header nav .links ul li a.active {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
+}
+#home .mouse_scroll {
+  background-image: url(../img/sprite.png);
+  width: 25px;
+  height: 53px;
+  background-position: 0px -52px;
+  position: absolute;
+  bottom: 50px;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: fadeInDown;
+          animation-name: fadeInDown;
+}
+@media (max-width: 767.98px) {
+  #home .mouse_scroll {
+    display: none;
+  }
+}
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 #home .title {
   width: 980px;
@@ -196,7 +239,6 @@ header nav .links ul li a.active {
     padding: 15px 5px;
     font-size: 25px;
     letter-spacing: 0px;
-    text-transform: none;
     line-height: normal;
   }
 }
@@ -211,7 +253,7 @@ header nav .links ul li a.active {
 }
 #home .home__block {
   background-color: #00000052;
-  width: 670px;
+  width: 690px;
   padding: 35px 20px;
   color: #ffffffed;
   font-size: 25px;
@@ -235,10 +277,14 @@ header nav .links ul li a.active {
   position: absolute;
   top: -25px;
   left: -25px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 @media (max-width: 767.98px) {
   #home .home__block-title {
     left: -10px;
+    letter-spacing: 0px;
+    text-transform: initial;
   }
 }
 #home .home__block-inner {
@@ -249,12 +295,34 @@ header nav .links ul li a.active {
   margin: 0px;
 }
 #home .home__block-inner a {
-  background-color: #405162;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  overflow: hidden;
+  color: #ffffffed;
+  background: #405162;
   height: 30px;
   padding: 10px 20px;
   position: absolute;
   right: -25px;
   bottom: -25px;
+  border-radius: 5px;
+}
+#home .home__block-inner a span {
+  position: relative;
+}
+#home .home__block-inner a::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  background: #c19655;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+#home .home__block-inner a:hover::before {
+  transform: translate3d(100%, 0, 0);
 }
 @media (max-width: 767.98px) {
   #home .home__block-inner a {
@@ -263,19 +331,32 @@ header nav .links ul li a.active {
 }
 
 #about .wrapper .about__block {
-  margin: 10px 0px;
+  margin: 25px 0px;
 }
 #about .wrapper .about__block-title {
-  color: #405162;
+  color: #ffffffed;
+  background-color: #405162;
   font-size: 26px;
   margin-bottom: 10px;
+  text-align: center;
+  padding: 20px 0px;
+}
+@media (max-width: 767.98px) {
+  #about .wrapper .about__block-title {
+    font-size: 20px;
+  }
 }
 #about .wrapper .about__block-subtitle {
   font-size: 15px;
 }
 @media (max-width: 767.98px) {
+  #about .wrapper .about__block-subtitle {
+    text-align: center;
+  }
+}
+@media (max-width: 767.98px) {
   #about .wrapper .about__block {
-    padding: 0px 10px;
+    padding: 0px 15px;
   }
 }
 
@@ -302,6 +383,7 @@ header nav .links ul li a.active {
 }
 #feature .feature__download a {
   background-color: #405162;
+  color: #fff;
   margin: 20px 30px;
   padding: 10px 30px;
   border-radius: 4px;
@@ -422,6 +504,9 @@ header nav .links ul li a.active {
   color: #fff;
   text-transform: uppercase;
   padding: 100px 20px;
+}
+#contact .wrapper .contact__block a {
+  color: #ffffffed;
 }
 #contact .wrapper .contact__block-title {
   font-size: 35px;
