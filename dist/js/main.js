@@ -1,12 +1,17 @@
 const btnMenu = document.getElementsByClassName('menu__btn')[0];
 const menu = document.getElementsByClassName('links')[0];
+const links = [document.getElementsByClassName('logo')[0].getElementsByTagName('a')[0]];
 
+Object.values(document.getElementsByClassName('links')[0].getElementsByTagName('a')).forEach(function (el) {
+  links.push(el);
+});
+console.log(links);
 btnMenu.addEventListener('click', function () {
   this.classList.toggle('active');
   menu.classList.toggle('open');
 });
 
-const links = document.getElementsByClassName('links')[0].getElementsByTagName('a');
+// const links = document.getElementsByClassName('links')[0].getElementsByTagName('a');
 Object.values(links).forEach( function (el) {
   el.addEventListener('click', event => {
     event.preventDefault();
@@ -38,20 +43,16 @@ document.getElementsByClassName('form_btn')[0].addEventListener('click', e => {
     });
 })
 window.addEventListener('scroll', function (e) {
+  let isContent = false;
   // console.log(window.scrollY);
   Object.values(links).forEach( function (el, i) {
     let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300;
     if (window.scrollY >= y) {
-      if (i > 0) {
-        document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
-        console.log(i)
-      }      
-      el.classList.add('active');
-    } else if (window.scrollY < document.getElementById(document.getElementsByClassName('links')[0].getElementsByTagName('a')[0].getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300) {
-      if (document.getElementsByClassName('links')[0].getElementsByTagName('a')[0].classList.contains('active')) {
+      if (document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.contains('active')) {
           document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
-      }
-    }
+        }
+      el.classList.add('active');  
+    } 
   });
 });
 $(document).ready(function(){
