@@ -6,6 +6,7 @@ Object.values(document.getElementsByClassName('links')[0].getElementsByTagName('
   links.push(el);
 });
 console.log(links);
+links[0].classList.add('active');
 btnMenu.addEventListener('click', function () {
   this.classList.toggle('active');
   menu.classList.toggle('open');
@@ -42,19 +43,33 @@ document.getElementsByClassName('form_btn')[0].addEventListener('click', e => {
       behavior: 'smooth'
     });
 })
-window.addEventListener('scroll', function (e) {
-  let isContent = false;
-  // console.log(window.scrollY);
-  Object.values(links).forEach( function (el, i) {
-    let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300;
+var isActiveClass = false;
+window.addEventListener('scroll', function () {
+  
+  links.forEach(function(el, i) {
+    let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300;  
     if (window.scrollY >= y) {
-      if (document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.contains('active')) {
-          document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
+      console.log(el)
+      if (document.getElementsByTagName('nav')[0].getElementsByClassName('active')[0].classList.contains('active')) {
+          document.getElementsByTagName('nav')[0].getElementsByClassName('active')[0].classList.remove('active');
+          isActiveClass = false;
         }
-      el.classList.add('active');  
-    } 
-  });
+      el.classList.add('active');
+      isActiveClass = true;
+    }
+  }) 
 });
+  // console.log(window.scrollY);
+//   Object.values(links).forEach( function (el, i) {
+//     let y = document.getElementById(el.getAttribute('data-scroll')).getBoundingClientRect().top + pageYOffset - 300;
+//     if (window.scrollY >= y) {
+//       if (document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.contains('active')) {
+//           document.getElementsByClassName('links')[0].getElementsByClassName('active')[0].classList.remove('active');
+//         }
+//       el.classList.add('active');  
+//     } 
+//   });
+// });
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
     loop:true,

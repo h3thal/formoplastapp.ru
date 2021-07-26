@@ -59,6 +59,14 @@ header nav .logo {
   justify-content: space-around;
   align-items: center;
 }
+header nav .logo a {
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 25px 0px;
+}
+header nav .logo a.active {
+  color: #c19655;
+}
 @media (max-width: 991.98px) {
   header nav .logo {
     width: 100%;
