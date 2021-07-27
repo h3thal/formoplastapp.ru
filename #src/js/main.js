@@ -43,7 +43,6 @@ document.getElementsByClassName('form_btn')[0].addEventListener('click', e => {
       behavior: 'smooth'
     });
 })
-var isActiveClass = false;
 window.addEventListener('scroll', function () {
   
   links.forEach(function(el, i) {
@@ -52,10 +51,8 @@ window.addEventListener('scroll', function () {
       console.log(el)
       if (document.getElementsByTagName('nav')[0].getElementsByClassName('active')[0].classList.contains('active')) {
           document.getElementsByTagName('nav')[0].getElementsByClassName('active')[0].classList.remove('active');
-          isActiveClass = false;
         }
       el.classList.add('active');
-      isActiveClass = true;
     }
   }) 
 });
